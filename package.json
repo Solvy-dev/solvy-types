@@ -1,0 +1,19 @@
+{
+  "name": "solvy-types",
+  "version": "1.0.0",
+  "description": "Solvy types and interfaces",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "solvy",
+    "types",
+    "interfaces"
+  ],
+  "author": "German Tellez",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  }
+}
