@@ -11,7 +11,11 @@ export interface SolutionDB extends Solution {
   createdAt: string;
 }
 
-export type UpdateSolutionPayload = Pick<SolutionDB, 'description' | 'picture' | 'author'>;
+export interface UpdateSolutionPayload {
+  author?: string;
+  description?: string;
+  picture?: string;
+}
 
 export interface AddSolution {
   (solution: Solution): Promise<SolutionDB>
