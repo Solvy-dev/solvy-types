@@ -14,3 +14,15 @@ export interface BookSectionDB extends BookSection {
 export interface SectionWithProblems extends BookSection {
   problems: ProblemDB[]
 }
+
+export interface UpdateBookSection {
+  (section: BookSectionDB, bookId: string): Promise<BookSectionDB>
+}
+
+export interface SectionWithProblems extends BookSection {
+  problems: ProblemDB[]
+}
+
+export interface DeleteBookSection {
+  (sectionId: string): Promise<boolean>
+}

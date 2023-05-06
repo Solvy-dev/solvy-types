@@ -17,15 +17,39 @@ export interface BookDB extends Book {
   createdAt: string;
 }
 
-
-export interface BookCategory {
-  name: string;
-  slug: string;
+export interface SummaryBook {
+  book: BookDB;
+  sections: SectionWithProblems[];
 }
 
-export interface BookCategoryDB extends BookCategory {
-  id: string;
-  createdAt: string;
+
+// API Services
+export interface GetBook {
+  (id: string): Promise<BookDB>
+}
+
+export interface AddBook {
+  (payload: Book, slug: string): Promise<BookDB>
+}
+
+export interface FindBookByTitle {
+  (title: string): Promise<Book[]>
+}
+
+export interface UpdateBook {
+  (book: BookDB, bookId: string): Promise<BookDB>
+}
+
+
+export interface DeleteBook {
+  (bookId: string): Promise<Book>
+}
+export interface GetBookBySlug {
+  (slug: string): Promise<BookDB>
+}
+
+export interface GetBooksBySlug {
+  (slug: string): Promise<BookDB[]>
 }
 
 export interface SummaryBook {

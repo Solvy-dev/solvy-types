@@ -14,3 +14,23 @@ export interface ProblemDB extends Problem {
 
 export type UpdateProblemPayload = Pick<ProblemDB, 'name' | 'description' | 'picture' | 'slug'>;
 
+export interface AddProblem {
+  (payload: Problem): Promise<ProblemDB>
+}
+
+export interface GetSectionProblems {
+  (bookId: string, sectionId: string): Promise<ProblemDB[]>;
+}
+
+export interface GetProblemBySlug {
+  (slug: string): Promise<ProblemDB | []>
+}
+
+
+export interface DeleteProblem {
+  (problemId: string, sectionId: string): Promise<boolean>
+}
+
+export interface UpdateProblem {
+  (problemId: string, sectionId: string, problem: UpdateProblemPayload): Promise<ProblemDB>
+}
