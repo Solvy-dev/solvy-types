@@ -1,10 +1,10 @@
-enum MembershipType {
+export enum MembershipType {
   FREE = 'FREE',
   BASIC = 'BASIC',
   PREMIUM = 'PREMIUM'
 }
 
-enum MembershipStatus {
+export enum MembershipStatus {
   ACTIVE = 'ACTIVE',
   INACTIVE = 'INACTIVE',
   CANCELLED = 'CANCELLED',
@@ -14,8 +14,8 @@ export interface Membership {
   userId:     string;
   type:       MembershipType;
   status:     MembershipStatus;
-  startDate:  string;
-  endDate:    string;
+  startDate?:  string;
+  endDate?:    string;
 }
 
 export interface MembershipDB extends Membership {
