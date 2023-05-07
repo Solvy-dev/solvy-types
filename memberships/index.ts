@@ -1,8 +1,19 @@
+enum MembershipType {
+  FREE = 'FREE',
+  BASIC = 'BASIC',
+  PREMIUM = 'PREMIUM'
+}
+
+enum MembershipStatus {
+  ACTIVE = 'ACTIVE',
+  INACTIVE = 'INACTIVE',
+  CANCELLED = 'CANCELLED',
+}
+
 export interface Membership {
   userId:     string;
-  email:      string;
-  type:       string;
-  status:     string;
+  type:       MembershipType;
+  status:     MembershipStatus;
   startDate:  string;
   endDate:    string;
 }
