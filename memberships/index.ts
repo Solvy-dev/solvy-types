@@ -23,4 +23,4 @@ export interface MembershipDB extends Membership {
   endDate?:    string;
 }
 
-export type UpdateMemership = Omit<Membership, 'userId' | 'email'>
+export type UpdateMemership = Partial<Pick<MembershipDB, 'type' | 'status' | 'startDate' | 'endDate'>>;
