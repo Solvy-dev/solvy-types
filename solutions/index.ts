@@ -24,7 +24,7 @@ export interface SolutionDB extends Solution {
 export interface UpdateSolutionPayload {
   author?: string;
   description?: string;
-  picture?: string;
+  attachment?: Attachment;
 }
 
 export interface AddSolution {
