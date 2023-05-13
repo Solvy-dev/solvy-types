@@ -12,7 +12,7 @@ export interface Solution {
   bookId: string;
   problemId: string;
   description: string;
-  attachment: Attachment;
+  attachment?: Attachment;
   author: string;
 }
 
