@@ -3,6 +3,7 @@ import { ProblemDB } from "../problems";
 export interface BookSection {
   bookId: string;
   title: string;
+  subtitle: string;
   order: number;
 }
 
