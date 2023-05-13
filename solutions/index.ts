@@ -1,8 +1,18 @@
+export enum AttachmentType {
+  IMAGE = 'IMAGE',
+  PDF = 'PDF'
+}
+
+export interface Attachment {
+  type: AttachmentType;
+  file: string;
+}
+
 export interface Solution {
   bookId: string;
   problemId: string;
   description: string;
-  picture: string;
+  attachment: Attachment;
   author: string;
 }
 
