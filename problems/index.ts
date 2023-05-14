@@ -28,7 +28,7 @@ export interface GetProblemBySlug {
 
 
 export interface DeleteProblem {
-  (problemId: string, sectionId: string): Promise<boolean>
+  (problemId: string, sectionId: string, pictureUrl?: string): Promise<boolean>
 }
 
 export interface UpdateProblem {
