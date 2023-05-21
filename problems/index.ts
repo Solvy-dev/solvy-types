@@ -32,5 +32,5 @@ export interface DeleteProblem {
 }
 
 export interface UpdateProblem {
-  (problemId: string, sectionId: string, problem: UpdateProblemPayload): Promise<ProblemDB>
+  (problemDB: ProblemDB, payload: UpdateProblemPayload): Promise<ProblemDB>
 }
