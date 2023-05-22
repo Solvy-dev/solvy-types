@@ -42,10 +42,10 @@ export interface UpdateBook {
 
 
 export interface DeleteBook {
-  (bookId: string): Promise<Book>
+  (bookId: string): Promise<boolean>
 }
 export interface GetBookBySlug {
-  (slug: string): Promise<BookDB>
+  (slug: string): Promise<BookDB | null>
 }
 
 export interface GetBooksBySlug {

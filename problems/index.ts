@@ -23,7 +23,7 @@ export interface GetSectionProblems {
 }
 
 export interface GetProblemBySlug {
-  (slug: string): Promise<ProblemDB | []>
+  (slug: string): Promise<ProblemDB | null>
 }
 
 
