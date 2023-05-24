@@ -12,6 +12,12 @@ export interface BookSectionDB extends BookSection {
   createdAt: string;
 }
 
+export interface UpdateBookSectionPayload {
+  title?: string;
+  subtitle?: string;
+  order?: number;
+}
+
 export interface SectionWithProblems extends BookSection {
   problems: ProblemDB[]
 }
