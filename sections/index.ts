@@ -33,3 +33,8 @@ export interface SectionWithProblems extends BookSection {
 export interface DeleteBookSection {
   (bookId: string, sectionId: string): Promise<boolean>
 }
+
+export interface GetSectionService {
+  (sectionId: string, bookId: string): Promise<BookSectionDB>
+}
+
