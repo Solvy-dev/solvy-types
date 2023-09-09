@@ -22,10 +22,16 @@ export interface SolutionDB extends Solution {
   createdAt: string;
 }
 
+export type AttachmentPayload = {
+  type?: AttachmentType;
+  payload?: string; // base64 encoded string
+  fileName?: string;
+  action: 'add' | 'upload' | 'delete';
+}
 export interface UpdateSolutionPayload {
   author?: string;
   description?: string;
-  attachment?: Attachment;
+  attachment?: AttachmentPayload;
 }
 
 export interface AddSolution {
