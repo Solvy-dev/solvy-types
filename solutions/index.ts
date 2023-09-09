@@ -5,9 +5,8 @@ export enum AttachmentType {
 
 export interface Attachment {
   type: AttachmentType;
-  url: string;
+  file: string;
   fileName: string;
-  payload?: any; // Used only to upload files
 }
 
 export interface Solution {
