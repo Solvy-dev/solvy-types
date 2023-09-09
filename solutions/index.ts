@@ -23,18 +23,20 @@ export interface SolutionDB extends Solution {
 }
 
 export type AttachmentPayload = {
-  type?: AttachmentType;
-  payload?: string; // base64 encoded string
-  fileName?: string;
-  action: 'upload' | 'delete';
+  type: AttachmentType;
+  payload: string; // base64 encoded string
+  fileName: string;
 }
 export interface UpdateSolutionPayload {
   author?: string;
   description?: string;
   attachment?: AttachmentPayload;
-  createdAt: string;
+  createdAt?: string;
 }
 
+export type UpdateSolutionItem = Omit<UpdateSolutionPayload, 'attachment'> & {
+  attachment?: Attachment;
+}
 export interface AddSolution {
   (solution: Solution): Promise<SolutionDB>
 }
