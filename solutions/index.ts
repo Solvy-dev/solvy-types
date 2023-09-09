@@ -5,7 +5,7 @@ export enum AttachmentType {
 
 export type Attachment = {
   type: AttachmentType;
-  file: string;
+  url: string;
   fileName: string;
 }
 
