@@ -26,12 +26,13 @@ export type AttachmentPayload = {
   type?: AttachmentType;
   payload?: string; // base64 encoded string
   fileName?: string;
-  action: 'add' | 'upload' | 'delete';
+  action: 'upload' | 'delete';
 }
 export interface UpdateSolutionPayload {
   author?: string;
   description?: string;
   attachment?: AttachmentPayload;
+  createdAt: string;
 }
 
 export interface AddSolution {
