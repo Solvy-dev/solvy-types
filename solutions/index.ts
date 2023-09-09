@@ -20,6 +20,11 @@ export interface Solution {
 export interface SolutionDB extends Solution {
   id: string;
   createdAt: string;
+  updatedAt: string;
+}
+
+export type SolutionPayload = Solution & {
+  attachment: AttachmentPayload
 }
 
 export type AttachmentPayload = {
