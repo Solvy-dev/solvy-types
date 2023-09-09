@@ -3,7 +3,7 @@ export enum AttachmentType {
   PDF = 'PDF'
 }
 
-export interface Attachment {
+export type Attachment = {
   type: AttachmentType;
   file: string;
   fileName: string;
