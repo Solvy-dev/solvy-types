@@ -24,7 +24,7 @@ export interface SolutionDB extends Solution {
   updatedAt: string;
 }
 
-export type SolutionPayload = Solution & {
+export type AddSolutionPayload = Solution & {
   attachment: AttachmentPayload
 }
 
@@ -36,15 +36,13 @@ export type AttachmentPayload = {
 export interface UpdateSolutionPayload {
   author?: string;
   description?: string;
-  attachment?: AttachmentPayload;
   createdAt?: string;
+  updatedAt?: string;
+  attachment?: Attachment // used to update the table after upload file to the s3 bucket
 }
 
-export type UpdateSolutionItem = Omit<UpdateSolutionPayload, 'attachment'> & {
-  attachment?: Attachment;
-}
 export interface AddSolution {
-  (solution: Solution): Promise<SolutionDB>
+  (solution: AddSolutionPayload): Promise<SolutionDB>
 }
 
 export interface GetProblemSolutions {
