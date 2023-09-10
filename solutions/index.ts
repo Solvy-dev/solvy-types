@@ -11,10 +11,11 @@ export type Attachment = {
 
 export interface Solution {
   bookId: string;
+  sectionId: string;
   problemId: string;
   description: string;
-  attachment?: Attachment;
   author: string;
+  attachment?: Attachment;
 }
 
 export interface SolutionDB extends Solution {
