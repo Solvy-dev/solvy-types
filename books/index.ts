@@ -2,6 +2,8 @@ import { SectionWithProblems } from "../sections";
 
 export interface Book {
   title: string;
+  description: string;
+  isbn: string;
   picture: string;
   author: string;
   category: string;
