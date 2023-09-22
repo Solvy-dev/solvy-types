@@ -4,6 +4,7 @@ export interface Problem {
   name:             string;
   description:      string;
   picture?:         string;
+  position:         number;
 }
 
 export interface ProblemDB extends Problem {

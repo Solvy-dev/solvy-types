@@ -15,6 +15,7 @@ export interface Solution {
   problemId: string;
   description: string;
   author: string;
+  position: number;
   attachment?: Attachment;
 }
 

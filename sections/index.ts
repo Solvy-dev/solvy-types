@@ -4,7 +4,7 @@ export interface BookSection {
   bookId: string;
   title: string;
   subtitle: string;
-  order: number;
+  position: number;
 }
 
 export interface BookSectionDB extends BookSection {
@@ -15,7 +15,7 @@ export interface BookSectionDB extends BookSection {
 export interface UpdateBookSectionPayload {
   title?: string;
   subtitle?: string;
-  order?: number;
+  position?: number;
 }
 
 export interface SectionWithProblems extends BookSection {
