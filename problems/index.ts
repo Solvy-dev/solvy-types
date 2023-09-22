@@ -11,6 +11,7 @@ export interface ProblemDB extends Problem {
   id:         string;
   slug:       string;
   createdAt:  string;
+  updatedAt:  string;
 }
 
 export type UpdateProblemPayload = Pick<ProblemDB, 'name' | 'description' | 'picture' | 'slug' | 'position'>;
