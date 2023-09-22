@@ -13,7 +13,7 @@ export interface ProblemDB extends Problem {
   createdAt:  string;
 }
 
-export type UpdateProblemPayload = Pick<ProblemDB, 'name' | 'description' | 'picture' | 'slug'>;
+export type UpdateProblemPayload = Pick<ProblemDB, 'name' | 'description' | 'picture' | 'slug' | 'position'>;
 
 export interface AddProblem {
   (payload: Problem): Promise<ProblemDB>
