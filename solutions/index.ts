@@ -1,13 +1,4 @@
-export enum AttachmentType {
-  IMAGE = 'IMAGE',
-  PDF = 'PDF'
-}
-
-export type Attachment = {
-  type: AttachmentType;
-  url: string;
-  fileName: string;
-}
+import { Attachment, AttachmentPayload } from "../shared";
 
 export interface Solution {
   bookId: string;
@@ -29,11 +20,6 @@ export type AddSolutionPayload = Solution & {
   attachment: AttachmentPayload
 }
 
-export type AttachmentPayload = {
-  type: AttachmentType;
-  payload: string; // base64 encoded string
-  fileName: string;
-}
 export interface UpdateSolutionPayload {
   author?: string;
   description?: string;
