@@ -14,7 +14,7 @@ export interface ProblemDB extends Problem {
   updatedAt:  string;
 }
 
-export type UpdateProblemPayload = Partial<Pick<ProblemDB, 'name' | 'description' | 'picture' | 'slug' | 'position'>>;
+export type UpdateProblemPayload = Partial<Pick<ProblemDB, 'name' | 'description' | 'slug' | 'position'>>;
 export interface AddProblem {
   (payload: Problem): Promise<ProblemDB>
 }
