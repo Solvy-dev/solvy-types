@@ -10,7 +10,7 @@ export interface BookRequest {
 }
 
 export interface RequestBook {
-  (request: BookRequest): Promise<BookRequest>
+  (request: BookRequest): Promise<BookRequest>;
 }
 
 export interface AnswerRequest {
@@ -22,5 +22,5 @@ export interface AnswerRequest {
 }
 
 export interface RequestAnswer {
-  (request: AnswerRequest): Promise<AnswerRequest>
+  (request: AnswerRequest): Promise<AnswerRequest>;
 }

@@ -1,4 +1,4 @@
-import { ProblemDB } from "../problems";
+import { ProblemDB } from '../problems';
 
 export interface BookSection {
   bookId: string;
@@ -19,22 +19,25 @@ export interface UpdateBookSectionPayload {
 }
 
 export interface SectionWithProblems extends BookSection {
-  problems: ProblemDB[]
+  problems: ProblemDB[];
 }
 
 export interface UpdateBookSection {
-  (bookId: string, sectionId: string, payload: BookSectionDB): Promise<BookSectionDB>
+  (
+    bookId: string,
+    sectionId: string,
+    payload: BookSectionDB,
+  ): Promise<BookSectionDB>;
 }
 
 export interface SectionWithProblems extends BookSection {
-  problems: ProblemDB[]
+  problems: ProblemDB[];
 }
 
 export interface DeleteBookSection {
-  (bookId: string, sectionId: string): Promise<boolean>
+  (bookId: string, sectionId: string): Promise<boolean>;
 }
 
 export interface GetSectionService {
-  (sectionId: string, bookId: string): Promise<BookSectionDB>
+  (sectionId: string, bookId: string): Promise<BookSectionDB>;
 }
-

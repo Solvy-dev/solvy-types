@@ -1,4 +1,4 @@
-import { SectionWithProblems } from "../sections";
+import { SectionWithProblems } from '../sections';
 
 export interface Book {
   title: string;
@@ -24,34 +24,32 @@ export interface SummaryBook {
   sections: SectionWithProblems[];
 }
 
-
 // API Services
 export interface GetBook {
-  (id: string): Promise<BookDB>
+  (id: string): Promise<BookDB>;
 }
 
 export interface AddBook {
-  (payload: Book, slug: string): Promise<BookDB>
+  (payload: Book, slug: string): Promise<BookDB>;
 }
 
 export interface FindBookByTitle {
-  (title: string): Promise<Book[]>
+  (title: string): Promise<Book[]>;
 }
 
 export interface UpdateBook {
-  (book: BookDB, bookId: string): Promise<BookDB>
+  (book: BookDB, bookId: string): Promise<BookDB>;
 }
-
 
 export interface DeleteBook {
-  (bookId: string): Promise<boolean>
+  (bookId: string): Promise<boolean>;
 }
 export interface GetBookBySlug {
-  (slug: string): Promise<BookDB | null>
+  (slug: string): Promise<BookDB | null>;
 }
 
 export interface GetBooksBySlug {
-  (slug: string): Promise<BookDB[]>
+  (slug: string): Promise<BookDB[]>;
 }
 
 export interface SummaryBook {

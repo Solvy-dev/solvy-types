@@ -1,7 +1,7 @@
 export enum MembershipType {
   FREE = 'FREE',
   BASIC = 'BASIC',
-  PREMIUM = 'PREMIUM'
+  PREMIUM = 'PREMIUM',
 }
 
 export enum MembershipStatus {
@@ -11,16 +11,18 @@ export enum MembershipStatus {
 }
 
 export interface Membership {
-  userId:     string;
-  type:       MembershipType;
-  status:     MembershipStatus;
+  userId: string;
+  type: MembershipType;
+  status: MembershipStatus;
 }
 
 export interface MembershipDB extends Membership {
-  id:         string;
-  createdAt:  string;
-  startDate?:  string;
-  endDate?:    string;
+  id: string;
+  createdAt: string;
+  startDate?: string;
+  endDate?: string;
 }
 
-export type UpdateMemership = Partial<Pick<MembershipDB, 'type' | 'status' | 'startDate' | 'endDate'>>;
+export type UpdateMemership = Partial<
+  Pick<MembershipDB, 'type' | 'status' | 'startDate' | 'endDate'>
+>;

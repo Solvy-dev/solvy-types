@@ -1,4 +1,4 @@
-import { Attachment, AttachmentPayload } from "../shared";
+import { Attachment, AttachmentPayload } from '../shared';
 
 export interface Solution {
   bookId: string;
@@ -17,21 +17,21 @@ export interface SolutionDB extends Solution {
 }
 
 export type AddSolutionPayload = Solution & {
-  attachment: AttachmentPayload
-}
+  attachment: AttachmentPayload;
+};
 
 export interface UpdateSolutionPayload {
   author?: string;
   description?: string;
   createdAt?: string;
   updatedAt?: string;
-  attachment?: Attachment // used to update the table after upload file to the s3 bucket
+  attachment?: Attachment; // used to update the table after upload file to the s3 bucket
 }
 
 export interface AddSolution {
-  (solution: AddSolutionPayload): Promise<SolutionDB>
+  (solution: AddSolutionPayload): Promise<SolutionDB>;
 }
 
 export interface GetProblemSolutions {
-  (bookId: string, problemId: string): Promise<SolutionDB[]>
+  (bookId: string, problemId: string): Promise<SolutionDB[]>;
 }
