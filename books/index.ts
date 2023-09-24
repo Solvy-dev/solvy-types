@@ -19,11 +19,6 @@ export interface BookDB extends Book {
   createdAt: string;
 }
 
-export interface SummaryBook {
-  book: BookDB;
-  sections: SectionWithProblems[];
-}
-
 // API Services
 export interface GetBook {
   (id: string): Promise<BookDB>;

@@ -18,10 +18,6 @@ export interface UpdateBookSectionPayload {
   position?: number;
 }
 
-export interface SectionWithProblems extends BookSection {
-  problems: ProblemDB[];
-}
-
 export interface UpdateBookSection {
   (
     bookId: string,
