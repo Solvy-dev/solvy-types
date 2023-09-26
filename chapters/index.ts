@@ -10,6 +10,7 @@ export interface Chapter {
 export interface ChapterDB extends Chapter {
   id: string;
   createdAt: string;
+  updatedAt: string;
 }
 
 export interface UpdateChapterPayload {
