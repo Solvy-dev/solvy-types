@@ -1,4 +1,4 @@
-import { SectionWithProblems } from '../sections';
+import { ChapterWithProblems } from '../chapters';
 
 export interface Book {
   title: string;
@@ -17,6 +17,11 @@ export interface BookDB extends Book {
   id: string;
   slug: string;
   createdAt: string;
+}
+
+export interface SummaryBook {
+  book: BookDB;
+  chapters: ChapterWithProblems[];
 }
 
 // API Services
@@ -49,5 +54,5 @@ export interface GetBooksBySlug {
 
 export interface SummaryBook {
   book: BookDB;
-  sections: SectionWithProblems[];
+  chapters: ChapterWithProblems[];
 }

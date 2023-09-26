@@ -2,7 +2,7 @@ import { Attachment, AttachmentPayload } from '../shared';
 
 export interface Solution {
   bookId: string;
-  sectionId: string;
+  chapterId: string;
   problemId: string;
   description: string;
   author: string;
