@@ -17,6 +17,7 @@ export interface BookDB extends Book {
   id: string;
   slug: string;
   createdAt: string;
+  updatedAt: string;
 }
 
 export interface SummaryBook {
@@ -30,7 +31,7 @@ export interface GetBook {
 }
 
 export interface AddBook {
-  (payload: Book, slug: string): Promise<BookDB>;
+  (payload: Book): Promise<BookDB>;
 }
 
 export interface FindBookByTitle {
