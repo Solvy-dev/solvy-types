@@ -20,6 +20,8 @@ export interface BookDB extends Book {
   updatedAt: string;
 }
 
+export type AddBookPayload = Omit<Book, 'picture'>;
+
 export interface SummaryBook {
   book: BookDB;
   chapters: ChapterWithProblems[];
