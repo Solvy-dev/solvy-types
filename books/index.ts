@@ -43,7 +43,7 @@ export interface FindBookByTitle {
 }
 
 export interface UpdateBook {
-  (book: BookDB, bookId: string): Promise<BookDB>;
+  (bookId: string, payload: UpdateBookPayload): Promise<BookDB>;
 }
 
 export interface DeleteBook {
