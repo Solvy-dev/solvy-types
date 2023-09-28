@@ -22,6 +22,8 @@ export interface BookDB extends Book {
 
 export type AddBookPayload = Omit<Book, 'picture'>;
 
+export type UpdateBookPayload = Partial<Omit<Book, 'picture'>>;
+
 export interface SummaryBook {
   book: BookDB;
   chapters: ChapterWithProblems[];
