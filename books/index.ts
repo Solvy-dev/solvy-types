@@ -22,7 +22,9 @@ export interface BookDB extends Book {
   updatedAt: string;
 }
 
-export type AddBookPayload = Book & { picture?: AttachmentPayload };
+export type AddBookPayload = Omit<Book, 'picture'> & {
+  picture?: AttachmentPayload;
+};
 
 export type UpdateBookPayload = Partial<Omit<Book, 'picture'>>;
 
