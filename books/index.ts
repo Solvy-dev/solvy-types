@@ -1,3 +1,5 @@
+import { AttachmentPayload } from '@models/shared';
+
 import { ChapterWithProblems } from '../chapters';
 
 export interface Book {
@@ -20,7 +22,7 @@ export interface BookDB extends Book {
   updatedAt: string;
 }
 
-export type AddBookPayload = Omit<Book, 'picture'>;
+export type AddBookPayload = Book & { picture?: AttachmentPayload };
 
 export type UpdateBookPayload = Partial<Omit<Book, 'picture'>>;
 
