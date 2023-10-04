@@ -1,4 +1,4 @@
-import { AttachmentPayload } from '@models/shared';
+import { AttachmentPayload } from '../shared';
 
 import { ChapterWithProblems } from '../chapters';
 
