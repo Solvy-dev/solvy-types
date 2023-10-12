@@ -1,6 +1,6 @@
 import { Attachment, AttachmentPayload } from '../shared';
 
-export interface Solution {
+export type Solution = {
   bookId: string;
   chapterId: string;
   problemId: string;
@@ -8,13 +8,13 @@ export interface Solution {
   author: string;
   position: number;
   attachment?: Attachment;
-}
+};
 
-export interface SolutionDB extends Solution {
+export type SolutionDB = Solution & {
   id: string;
   createdAt: string;
   updatedAt: string;
-}
+};
 
 export type SolutionSeed = Omit<SolutionDB, 'createdAt' | 'updatedAt'>;
 
