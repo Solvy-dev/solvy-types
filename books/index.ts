@@ -30,12 +30,15 @@ export type UpdateBookPayload = Partial<Omit<Book, 'picture'>>;
 
 export type BookSeed = Omit<BookDB, 'createdAt' | 'updatedAt'>;
 
+export type BookSeedPayload = Omit<Book, 'picture'> & {
+  picture?: AttachmentPayload;
+};
 export interface SummaryBook {
   book: BookDB;
   chapters: ChapterWithProblems[];
 }
 
-export type BookScript = BookSeed & { syncStatus?: 'sync' | 'synced' };
+export type BookScript = BookSeed & { syncStatus?: 'new' | 'sync' | 'synced' };
 
 // API Services
 export interface GetBook {
