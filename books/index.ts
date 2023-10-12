@@ -30,7 +30,10 @@ export type UpdateBookPayload = Partial<Omit<Book, 'picture'>>;
 
 export type BookSeed = Omit<BookDB, 'createdAt' | 'updatedAt'>;
 
-export type BookSeedPayload = Omit<Book, 'picture'> & {
+export type BookSeedPayload = Omit<
+  BookDB,
+  'createdAt' | 'updatedAt' | 'picture'
+> & {
   picture?: AttachmentPayload;
 };
 export interface SummaryBook {
