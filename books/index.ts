@@ -35,7 +35,7 @@ export type BookSeedPayload = Omit<
   picture: AttachmentPayload;
 };
 
-export type UpdateBookSeedPayload = Omit<BookSeedPayload, 'id'>;
+export type UpdateBookPayload = Omit<BookSeedPayload, 'id'>;
 export interface SummaryBook {
   book: BookDB;
   chapters: ChapterWithProblems[];
@@ -54,10 +54,6 @@ export interface AddBook {
 
 export interface FindBookByTitle {
   (title: string): Promise<Book[]>;
-}
-
-export interface UpdateBook {
-  (bookId: string, payload: UpdateBookPayload): Promise<BookDB>;
 }
 
 export interface DeleteBook {
