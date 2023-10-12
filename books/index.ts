@@ -26,8 +26,6 @@ export type AddBookPayload = Omit<Book, 'picture'> & {
   picture?: AttachmentPayload;
 };
 
-export type UpdateBookPayload = Partial<Omit<Book, 'picture'>>;
-
 export type BookSeed = Omit<BookDB, 'createdAt' | 'updatedAt'>;
 
 export type BookSeedPayload = Omit<
@@ -36,6 +34,8 @@ export type BookSeedPayload = Omit<
 > & {
   picture: AttachmentPayload;
 };
+
+export type UpdateBookSeedPayload = Omit<BookSeedPayload, 'id'>;
 export interface SummaryBook {
   book: BookDB;
   chapters: ChapterWithProblems[];
