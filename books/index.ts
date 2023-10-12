@@ -35,6 +35,8 @@ export interface SummaryBook {
   chapters: ChapterWithProblems[];
 }
 
+export type BookScript = SeedBook & { syncStatus?: 'sync' | 'synced' };
+
 // API Services
 export interface GetBook {
   (id: string): Promise<BookDB>;
