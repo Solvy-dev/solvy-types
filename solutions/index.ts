@@ -30,10 +30,6 @@ export interface UpdateSolutionPayload {
   attachment?: Attachment; // used to update the table after upload file to the s3 bucket
 }
 
-export interface AddSolution {
-  (solution: AddSolutionPayload): Promise<SolutionDB>;
-}
-
 export interface GetProblemSolutions {
   (bookId: string, problemId: string): Promise<SolutionDB[]>;
 }
