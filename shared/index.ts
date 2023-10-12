@@ -1,6 +1,6 @@
 export enum AttachmentType {
   IMAGE = 'IMAGE',
-  PDF = 'PDF',
+  PDF = 'PDF'
 }
 
 export type Attachment = {
@@ -10,7 +10,7 @@ export type Attachment = {
 };
 
 export type AttachmentPayload = {
-  type: AttachmentType;
+  type: 'IMAGE' | 'PDF';
   payload: string; // base64 encoded string
   fileName: string;
 };
