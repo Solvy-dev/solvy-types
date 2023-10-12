@@ -1,5 +1,4 @@
-import { AttachmentPayload } from '@models/shared';
-
+import { AttachmentPayload } from '../shared/index';
 export interface Problem {
   bookId: string;
   chapterId: string;
