@@ -14,6 +14,8 @@ export interface ProblemDB extends Problem {
   updatedAt: string;
 }
 
+export type ProblemSeed = Omit<ProblemDB, 'createdAt' | 'updatedAt'>;
+
 export type UpdateProblemPayload = Partial<
   Pick<ProblemDB, 'name' | 'description' | 'picture' | 'slug' | 'position'>
 >;

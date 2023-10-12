@@ -16,6 +16,8 @@ export interface SolutionDB extends Solution {
   updatedAt: string;
 }
 
+export type SolutionSeed = Omit<SolutionDB, 'createdAt' | 'updatedAt'>;
+
 export type AddSolutionPayload = Solution & {
   attachment: AttachmentPayload;
 };

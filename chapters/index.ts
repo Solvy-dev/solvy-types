@@ -12,7 +12,7 @@ export interface ChapterDB extends Chapter {
   createdAt: string;
   updatedAt: string;
 }
-
+export type ChapterSeed = Omit<ChapterDB, 'createdAt' | 'updatedAt'>;
 export interface UpdateChapterPayload {
   title?: string;
   subtitle?: string;

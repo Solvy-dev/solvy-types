@@ -28,14 +28,14 @@ export type AddBookPayload = Omit<Book, 'picture'> & {
 
 export type UpdateBookPayload = Partial<Omit<Book, 'picture'>>;
 
-export type SeedBook = Omit<BookDB, 'createdAt' | 'updatedAt'>;
+export type BookSeed = Omit<BookDB, 'createdAt' | 'updatedAt'>;
 
 export interface SummaryBook {
   book: BookDB;
   chapters: ChapterWithProblems[];
 }
 
-export type BookScript = SeedBook & { syncStatus?: 'sync' | 'synced' };
+export type BookScript = BookSeed & { syncStatus?: 'sync' | 'synced' };
 
 // API Services
 export interface GetBook {
