@@ -28,6 +28,8 @@ export type AddBookPayload = Omit<Book, 'picture'> & {
 
 export type UpdateBookPayload = Partial<Omit<Book, 'picture'>>;
 
+export type SeedBook = Omit<BookDB, 'createdAt' | 'updatedAt'>;
+
 export interface SummaryBook {
   book: BookDB;
   chapters: ChapterWithProblems[];
