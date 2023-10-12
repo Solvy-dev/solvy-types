@@ -34,7 +34,7 @@ export type BookSeedPayload = Omit<
   BookDB,
   'createdAt' | 'updatedAt' | 'picture'
 > & {
-  picture?: AttachmentPayload;
+  picture: AttachmentPayload;
 };
 export interface SummaryBook {
   book: BookDB;
