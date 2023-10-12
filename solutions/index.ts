@@ -16,8 +16,15 @@ export type SolutionDB = Solution & {
   updatedAt: string;
 };
 
-export type SolutionSeed = Omit<SolutionDB, 'createdAt' | 'updatedAt'>;
-
+export type SolutionSeed = Omit<
+  SolutionDB,
+  'createdAt' | 'updatedAt' | 'attachment'
+> & {
+  attachment?: string;
+};
+export type SolutionSeedPayload = Omit<SolutionSeed, 'attachment'> & {
+  attachment?: AttachmentPayload;
+};
 export type AddSolutionPayload = Solution & {
   attachment: AttachmentPayload;
 };
