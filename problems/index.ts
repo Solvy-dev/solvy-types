@@ -17,11 +17,14 @@ export type ProblemSeed = Omit<ProblemDB, 'createdAt' | 'updatedAt'>;
 export type ProblemSeedPayload = Omit<ProblemSeed, 'picture'> & {
   picture?: AttachmentPayload;
 };
-export type UpdateProblemPayload = Omit<ProblemSeedPayload, 'id' | 'slug'>;
+export type UpdateProblemSeedPayload = Omit<ProblemSeedPayload, 'id' | 'slug'>;
 export interface AddProblem {
   (payload: Problem): Promise<ProblemDB>;
 }
-
+export type UpdateProblemPayload = Omit<
+  ProblemDB,
+  'id' | 'bookId' | 'chapterId' | 'slug' | 'createdAt' | 'updatedAt'
+>;
 export interface GetChapterProblems {
   (bookId: string, chapterId: string): Promise<ProblemDB[]>;
 }
