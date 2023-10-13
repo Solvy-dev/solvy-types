@@ -22,9 +22,9 @@ export interface AddProblem {
   (payload: Problem): Promise<ProblemDB>;
 }
 export type UpdateProblemPayload = Omit<
-  Problem,
-  'bookId' | 'chapterId' | 'picture'
-> & { picture: AttachmentPayload };
+  ProblemDB,
+  'id' | 'bookId' | 'chapterId' | 'createdAt' | 'slug'
+> & { slug?: string };
 export interface GetChapterProblems {
   (bookId: string, chapterId: string): Promise<ProblemDB[]>;
 }
@@ -38,5 +38,5 @@ export interface DeleteProblem {
 }
 
 export interface UpdateProblem {
-  (problemDB: ProblemDB, payload: UpdateProblemPayload): Promise<ProblemDB>;
+  (problemDB: ProblemDB, payload: UpdateProblemSeedPayload): Promise<ProblemDB>;
 }
