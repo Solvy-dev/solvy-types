@@ -17,7 +17,10 @@ export type ProblemSeed = Omit<ProblemDB, 'createdAt' | 'updatedAt'>;
 export type ProblemSeedPayload = Omit<ProblemSeed, 'picture'> & {
   picture?: AttachmentPayload;
 };
-export type UpdateProblemSeedPayload = Omit<ProblemSeedPayload, 'id' | 'slug'>;
+export type UpdateProblemSeedPayload = Pick<
+  Problem,
+  'name' | 'description' | 'position'
+> & { picture?: AttachmentPayload };
 export interface AddProblem {
   (payload: Problem): Promise<ProblemDB>;
 }
