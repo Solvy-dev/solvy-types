@@ -14,13 +14,10 @@ export interface ProblemDB extends Problem {
   updatedAt: string;
 }
 export type ProblemSeed = Omit<ProblemDB, 'createdAt' | 'updatedAt'>;
-export type ProblemSeedPayload = Omit<ProblemSeed, 'picture'> & {
+export type ProblemSeedPayload = Omit<ProblemSeed, 'picture' | 'slug'> & {
   picture?: AttachmentPayload;
 };
-export type UpdateProblemSeedPayload = Pick<
-  Problem,
-  'name' | 'description' | 'position'
-> & { picture?: AttachmentPayload };
+
 export interface AddProblem {
   (payload: Problem): Promise<ProblemDB>;
 }
@@ -38,8 +35,4 @@ export interface GetProblemBySlug {
 
 export interface DeleteProblem {
   (problem: ProblemDB): Promise<boolean>;
-}
-
-export interface UpdateProblem {
-  (problemDB: ProblemDB, payload: UpdateProblemSeedPayload): Promise<ProblemDB>;
 }
