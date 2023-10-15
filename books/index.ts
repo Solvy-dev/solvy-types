@@ -19,12 +19,12 @@ export interface BookDB extends Book {
   createdAt: string;
   updatedAt: string;
 }
+export type UpdateBookPayload = Book & Pick<BookDB, 'slug'>;
 export type BookSeed = Book & Pick<BookDB, 'id'>;
 export type BookScript = BookSeed & { syncStatus?: 'new' | 'sync' | 'synced' };
 export type BookSeedPayload = Omit<BookSeed, 'picture'> & {
   picture: AttachmentPayload;
 };
-
 // API Services
 export interface SummaryBook {
   book: BookDB;
