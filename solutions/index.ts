@@ -34,6 +34,11 @@ export type UpdateSolutionPayload = Omit<
   'id' | 'bookId' | 'chapterId' | 'problemId'
 > & { updatedAt: string };
 
+export type UpdateSolutionSeedPayload = Omit<
+  UpdateSolutionPayload,
+  'updatedAt' | 'attachment'
+> & { attachment?: AttachmentPayload };
+
 export interface GetProblemSolutions {
   (bookId: string, problemId: string): Promise<SolutionDB[]>;
 }
