@@ -1,5 +1,4 @@
 import { AttachmentPayload } from '../shared';
-
 import { ChapterWithProblems } from '../chapters';
 
 export interface Book {
@@ -14,59 +13,41 @@ export interface Book {
   editorial: string;
   pages: number;
 }
-
 export interface BookDB extends Book {
   id: string;
   slug: string;
   createdAt: string;
   updatedAt: string;
 }
-
-export type AddBookPayload = Omit<Book, 'picture'> & {
-  picture?: AttachmentPayload;
-};
-
-export type BookSeed = Omit<BookDB, 'createdAt' | 'updatedAt'>;
-
-export type BookSeedPayload = Omit<
-  BookDB,
-  'createdAt' | 'updatedAt' | 'picture'
-> & {
+export type BookSeed = Book & Pick<BookDB, 'id'>;
+export type BookScript = BookSeed & { syncStatus?: 'new' | 'sync' | 'synced' };
+export type BookSeedPayload = Omit<BookSeed, 'picture'> & {
   picture: AttachmentPayload;
 };
 
-export type UpdateBookPayload = Omit<BookSeedPayload, 'id'>;
+// API Services
 export interface SummaryBook {
   book: BookDB;
   chapters: ChapterWithProblems[];
 }
-
-export type BookScript = BookSeed & { syncStatus?: 'new' | 'sync' | 'synced' };
-
-// API Services
 export interface GetBook {
   (id: string): Promise<BookDB>;
 }
-
 export interface AddBook {
   (payload: Book): Promise<BookDB>;
 }
-
 export interface FindBookByTitle {
   (title: string): Promise<Book[]>;
 }
-
 export interface DeleteBook {
   (bookId: string): Promise<boolean>;
 }
 export interface GetBookBySlug {
   (slug: string): Promise<BookDB | null>;
 }
-
 export interface GetBooksBySlug {
   (slug: string): Promise<BookDB[]>;
 }
-
 export interface SummaryBook {
   book: BookDB;
   chapters: ChapterWithProblems[];
