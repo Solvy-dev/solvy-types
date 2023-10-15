@@ -29,13 +29,10 @@ export type AddSolutionPayload = Solution & {
   attachment: AttachmentPayload;
 };
 
-export interface UpdateSolutionPayload {
-  author?: string;
-  description?: string;
-  createdAt?: string;
-  updatedAt?: string;
-  attachment?: Attachment; // used to update the table after upload file to the s3 bucket
-}
+export type UpdateSolutionPayload = Omit<
+  Solution,
+  'id' | 'bookId' | 'chapterId' | 'problemId'
+> & { updatedAt: string };
 
 export interface GetProblemSolutions {
   (bookId: string, problemId: string): Promise<SolutionDB[]>;
