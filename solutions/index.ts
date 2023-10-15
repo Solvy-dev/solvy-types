@@ -25,20 +25,8 @@ export type SolutionSeed = Omit<
 export type SolutionSeedPayload = Omit<SolutionSeed, 'attachment'> & {
   attachment?: AttachmentPayload;
 };
-export type AddSolutionPayload = Solution & {
-  attachment: AttachmentPayload;
-};
 
 export type UpdateSolutionPayload = Omit<
   Solution,
-  'id' | 'bookId' | 'chapterId' | 'problemId'
+  'bookId' | 'chapterId' | 'problemId'
 > & { updatedAt: string };
-
-export type UpdateSolutionSeedPayload = Omit<
-  UpdateSolutionPayload,
-  'updatedAt' | 'attachment'
-> & { attachment?: AttachmentPayload };
-
-export interface GetProblemSolutions {
-  (bookId: string, problemId: string): Promise<SolutionDB[]>;
-}
