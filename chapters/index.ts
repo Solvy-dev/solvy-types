@@ -23,7 +23,7 @@ export interface ChapterWithProblems extends Chapter {
 }
 
 export interface UpdateChapter {
-  (bookId: string, chapterId: string, payload: ChapterDB): Promise<ChapterDB>;
+  (bookId: string, chapterId: string, payload: ChapterSeed): Promise<ChapterDB>;
 }
 
 export interface ChapterWithProblems extends Chapter {
