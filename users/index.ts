@@ -23,21 +23,16 @@ export type UserDB = User & {
   updatedAt: string;
 };
 
-export type UserPayload = Partial<User>;
-export type UpdateUserPayload = UserPayload & { updatedAt: string };
+export type AddUserPayload = Pick<
+  UserDB,
+  'email' | 'password' | 'provider' | 'accountType'
+> & { profile: UserProfile };
 
+export type UpdateUserPayload = UserProfile & {
+  updatedAt: string;
+};
 export interface NextAuthUser {
   name: string;
   image: string;
   email: string;
-}
-
-export interface AddUser {
-  (data: UserPayload): Promise<User>;
-}
-export interface GetUser {
-  (email: string): Promise<UserDB>;
-}
-export interface UpdateUser {
-  (email: string, data: UpdateUserPayload): Promise<UserDB>;
 }
