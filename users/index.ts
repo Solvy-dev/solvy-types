@@ -1,39 +1,30 @@
 export type UserProfile = {
-  alias?: string;
-  birthDate?: string;
-  city?: string;
-  country?: string;
-  name?: string;
-  phoneNumber?: string;
-  picture?: string;
-  schoolName?: string;
-  schoolType?: 'highSchool' | 'university';
+  firstName: string;
+  lastName: string;
+  birthDate: string;
+  country: string;
+  city: string;
 };
 
-export type UserDB = {
+export type User = {
+  email: string;
+  username: string;
+  profile: UserProfile;
+  isVerified: boolean;
   accountType: string;
-  createdAt: string;
-  email: string;
-  id: string;
   password?: string;
-  profile: UserProfile;
   provider: string;
-  role: 'user' | 'expert' | 'administrator';
+  role: 'student' | 'tutor' | 'admin';
 };
 
-export type User = Omit<UserDB, 'password'>;
+export type UserDB = User & {
+  id: string;
+  createdAt: string;
+  updatedAt: string;
+};
 
-export interface AddUserPayload {
-  accountType: 'credentials' | 'oauth';
-  email: string;
-  password?: string;
-  profile: UserProfile;
-  provider: string;
-}
-export interface UpdateUserPayload {
-  email?: string;
-  profile: UserProfile;
-}
+export type UserPayload = Partial<User>;
+export type UpdateUserPayload = UserPayload & { updatedAt: string };
 
 export interface NextAuthUser {
   name: string;
@@ -42,7 +33,7 @@ export interface NextAuthUser {
 }
 
 export interface AddUser {
-  (data: AddUserPayload): Promise<User>;
+  (data: UserPayload): Promise<User>;
 }
 export interface GetUser {
   (email: string): Promise<UserDB>;
