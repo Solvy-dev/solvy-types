@@ -14,7 +14,7 @@ export type User = {
   accountType: string;
   password?: string;
   provider: string;
-  role: 'student' | 'tutor' | 'admin';
+  role: 'student' | 'tutor' | 'administrator';
 };
 
 export type UserDB = User & {
