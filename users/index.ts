@@ -28,7 +28,8 @@ export type AddUserPayload = Pick<
   'email' | 'password' | 'provider' | 'accountType'
 > & { profile: UserProfile };
 
-export type UpdateUserPayload = UserProfile & {
+export type UpdateUserProfile = {
+  profile: UserProfile;
   updatedAt: string;
 };
 export interface NextAuthUser {
