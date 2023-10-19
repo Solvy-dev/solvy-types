@@ -9,7 +9,7 @@ export type UserProfile = {
 export type User = {
   email: string;
   username: string;
-  profile: UserProfile;
+  profile?: UserProfile;
   isVerified: boolean;
   accountType: string;
   password?: string;
@@ -22,7 +22,6 @@ export type UserDB = User & {
   createdAt: string;
   updatedAt: string;
 };
-
 export type SignUpPayload = Pick<
   UserDB,
   'email' | 'password' | 'provider' | 'accountType'
