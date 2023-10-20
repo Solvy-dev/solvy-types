@@ -1,9 +1,9 @@
 export type UserProfile = {
-  firstName: string;
-  lastName: string;
-  birthDate: string;
-  country: string;
-  city: string;
+  firstName?: string;
+  lastName?: string;
+  birthDate?: string;
+  country?: string;
+  city?: string;
 };
 
 export type User = {
