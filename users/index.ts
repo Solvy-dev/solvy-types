@@ -38,3 +38,9 @@ export interface NextAuthUser {
 }
 
 export type FormikSignUpPayload = SignUpPayload & { confirmPassword: string };
+export type ChangePassword = {
+  currentPassword: string;
+  newPassword: string;
+  confirmPassword: string;
+  token: string;
+};
