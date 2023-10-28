@@ -33,7 +33,3 @@ export interface ChapterWithProblems extends Chapter {
 export interface DeleteChapter {
   (bookId: string, chapterId: string): Promise<boolean>;
 }
-
-export interface GetChapterService {
-  (chapterId: string, bookId: string): Promise<ChapterDB>;
-}

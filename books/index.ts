@@ -30,21 +30,10 @@ export interface SummaryBook {
   book: BookDB;
   chapters: ChapterWithProblems[];
 }
-export interface GetBook {
-  (id: string): Promise<BookDB>;
-}
 export interface AddBook {
   (payload: Book): Promise<BookDB>;
 }
-export interface FindBookByTitle {
-  (title: string): Promise<Book[]>;
-}
-export interface DeleteBook {
-  (bookId: string): Promise<boolean>;
-}
-export interface GetBookBySlug {
-  (slug: string): Promise<BookDB | null>;
-}
+
 export interface GetBooksBySlug {
   (slug: string): Promise<BookDB[]>;
 }
