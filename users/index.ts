@@ -25,7 +25,7 @@ export type UserDB = User & {
 export type SignUpPayload = Pick<
   UserDB,
   'email' | 'password' | 'provider' | 'accountType'
-> & { oauthId: string };
+> & { oauthId?: string };
 
 export type UpdateUserProfile = {
   profile: UserProfile;
