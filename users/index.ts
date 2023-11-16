@@ -1,4 +1,5 @@
 export type UserProfile = {
+  picture?: string;
   firstName?: string;
   lastName?: string;
   birthDate?: string;
@@ -25,7 +26,7 @@ export type UserDB = User & {
 export type SignUpPayload = Pick<
   UserDB,
   'email' | 'password' | 'provider' | 'accountType'
-> & { oauthId?: string };
+> & { oauthId?: string; image?: string; name?: string };
 
 export type UpdateUserProfile = {
   profile: UserProfile;
