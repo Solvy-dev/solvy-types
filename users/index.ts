@@ -15,7 +15,8 @@ export type User = {
   accountType: string;
   password?: string;
   provider: string;
-  role: 'student' | 'tutor' | 'administrator';
+  type: 'student' | 'tutor' | 'parent'; // Analytics
+  role: 'student' | 'tutor' | 'admin'; // Show content conditionally in the platform
 };
 
 export type UserDB = User & {
