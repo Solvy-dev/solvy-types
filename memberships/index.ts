@@ -24,12 +24,12 @@ export interface Membership {
   paymentFrequency?: 'MONTHLY' | 'ANNUAL';
 }
 
-export interface MembershipDB extends Membership {
+export type MembershipDB = Membership & {
   id: string;
   createdAt: string;
   updatedAt: string;
-}
+};
 
-export type UpdateMembership = Partial<
+export type UpdateMembershipPayload = Partial<
   Pick<MembershipDB, 'type' | 'status' | 'startDate' | 'endDate'>
 >;
