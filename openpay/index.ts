@@ -1,4 +1,4 @@
-export type CustomerInfoPayload = {
+export type CustomerPayload = {
   external_id: string;
   name: string;
   last_name: string;
