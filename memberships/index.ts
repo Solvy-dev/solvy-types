@@ -8,6 +8,9 @@
   DEACTIVATED: User deactivated the account
 */
 export interface Membership {
+  customerId: string; // Openpay customer id
+  planId: string; // Openpay plan id
+  nextChargeDate: string; // Openpay next charge date
   userId: string;
   type: 'FREE' | 'PREMIUM';
   status:
@@ -30,6 +33,4 @@ export type MembershipDB = Membership & {
   updatedAt: string;
 };
 
-export type UpdateMembershipPayload = Partial<
-  Pick<MembershipDB, 'type' | 'status' | 'startDate' | 'endDate'>
->;
+export type UpdateMembershipPayload = Partial<Omit<MembershipDB, 'id'>>;

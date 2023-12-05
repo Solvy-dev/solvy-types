@@ -1,4 +1,4 @@
-export type AddPaymentPayload = {
+export type AddSubscriptionPayload = {
   userId: string;
   email: string;
   cardName: string;
