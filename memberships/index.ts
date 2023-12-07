@@ -10,7 +10,7 @@
 export interface Membership {
   customerId: string; // Openpay customer id
   planId: string; // Openpay plan id
-  nextChargeDate: string; // Openpay next charge date
+  chargeDate: string; // Openpay next charge date
   userId: string;
   type: 'FREE' | 'PREMIUM';
   status:
