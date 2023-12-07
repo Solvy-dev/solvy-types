@@ -33,4 +33,9 @@ export type MembershipDB = Membership & {
   updatedAt: string;
 };
 
+export type InitialMembership = Pick<
+  MembershipDB,
+  'id' | 'status' | 'type' | 'createdAt' | 'updatedAt' | 'userId'
+>;
+
 export type UpdateMembershipPayload = Partial<Omit<MembershipDB, 'id'>>;
