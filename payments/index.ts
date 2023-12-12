@@ -5,4 +5,5 @@ export type AddSubscriptionPayload = {
   cardNumber: string;
   cardCVV: string;
   expiration: string;
+  plan: string;
 };
