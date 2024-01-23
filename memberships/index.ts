@@ -15,12 +15,12 @@ export interface Membership {
   userId: string;
   type: 'FREE' | 'PREMIUM';
   status:
-    | 'STARTER'
-    | 'FREE_TRIAL'
-    | 'ACTIVE'
-    | 'EXPIRED'
-    | 'CANCELLED'
-    | 'DEACTIVATED';
+  | 'STARTER'
+  | 'FREE_TRIAL'
+  | 'ACTIVE'
+  | 'EXPIRED'
+  | 'CANCELLED'
+  | 'DEACTIVATED';
   trialEndDate?: string;
   trialStartDate?: string;
   startDate?: string;
@@ -40,3 +40,11 @@ export type InitialMembership = Pick<
 >;
 
 export type UpdateMembershipPayload = Partial<Omit<MembershipDB, 'id'>>;
+
+export type ActivateMembershipPayload = {
+  type: 'PREMIUM';
+  status: 'ACTIVE';
+  startDate: string;
+  endDate: string;
+  updatedAt: string
+}
