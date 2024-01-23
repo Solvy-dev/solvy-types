@@ -42,9 +42,9 @@ export type InitialMembership = Pick<
 export type UpdateMembershipPayload = Partial<Omit<MembershipDB, 'id'>>;
 
 export type ActivateMembershipPayload = {
-  type: 'PREMIUM';
-  status: 'ACTIVE';
-  startDate: string;
+  type: 'PREMIUM' | 'FREE';
+  status: 'ACTIVE' | 'CANCELLED';
+  startDate?: string;
   endDate: string;
   updatedAt: string
 }
