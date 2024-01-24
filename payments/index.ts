@@ -10,7 +10,7 @@ export type AddSubscriptionPayload = {
 
 // OpenPay
 export interface OpenpayWebhook {
-  type: 'charge.succeeded' | 'subscription.charge.failed'
+  type: 'charge.succeeded' | 'charge.refunded' | 'subscription.charge.failed'
   event_date: string;
   transaction: Transaction;
 }
