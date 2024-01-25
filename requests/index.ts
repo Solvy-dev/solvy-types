@@ -13,15 +13,15 @@ export interface RequestBook {
   (request: BookRequest): Promise<BookRequest>;
 }
 
-export interface AnswerRequest {
+export type SolutionRequest = {
   id: string;
   bookId: string;
   problemId: string;
   createdAt: string;
-  type: string;
 }
 export type RequestSolutionPayload = {
   userId: string;
   bookId: string;
   problemId: string;
+  createdAt: string;
 }
