@@ -20,7 +20,8 @@ export interface AnswerRequest {
   createdAt: string;
   type: string;
 }
-
-export interface RequestAnswer {
-  (request: AnswerRequest): Promise<AnswerRequest>;
+export type RequestSolutionPayload = {
+  userId: string;
+  bookId: string;
+  problemId: string;
 }
