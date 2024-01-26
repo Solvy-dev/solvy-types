@@ -15,6 +15,7 @@ export interface RequestBook {
 
 export type SolutionRequest = {
   id: string;
+  userId: string;
   bookId: string;
   problemId: string;
   createdAt: string;
