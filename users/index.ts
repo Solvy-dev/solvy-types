@@ -2,7 +2,7 @@ export type UserProfile = {
   picture?: string;
   firstName?: string;
   lastName?: string;
-  birthDate?: string;
+  birthDate?: string | null;
   country?: string;
   city?: string;
 };
