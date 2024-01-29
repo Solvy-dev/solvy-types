@@ -13,7 +13,7 @@ export interface ProblemDB extends Problem {
   createdAt: string;
   updatedAt: string;
 }
-export type ProblemSeed = Omit<ProblemDB, 'createdAt' | 'updatedAt'> & {
+export type ProblemSeed = Omit<ProblemDB, 'createdAt' | 'updatedAt' | 'slug'> & {
   slug?: string;
   sync?: boolean;
 };
