@@ -21,7 +21,7 @@ export interface BookDB extends Book {
 }
 export type UpdateBookPayload = Book & Pick<BookDB, 'slug'>;
 export type BookSeed = Book & Pick<BookDB, 'id'>;
-export type BookScript = BookSeed & { syncStatus?: 'new' | 'sync' | 'synced' };
+export type BookScript = BookSeed & { sync?: boolean };
 export type BookSeedPayload = Omit<BookSeed, 'picture'> & {
   picture: AttachmentPayload;
 };
