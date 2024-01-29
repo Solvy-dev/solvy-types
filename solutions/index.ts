@@ -21,6 +21,7 @@ export type SolutionSeed = Omit<
   'createdAt' | 'updatedAt' | 'attachment'
 > & {
   attachment?: string;
+  sync?: boolean;
 };
 export type SolutionSeedPayload = Omit<SolutionSeed, 'attachment'> & {
   attachment?: AttachmentPayload;
