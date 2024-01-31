@@ -13,7 +13,7 @@ export interface ChapterDB extends Chapter {
   updatedAt: string;
   slug: string;
 }
-export type ChapterSeed = Omit<ChapterDB, 'createdAt' | 'updatedAt'>;
+export type ChapterSeed = Omit<ChapterDB, 'createdAt' | 'updatedAt'> & { sync: boolean };
 export type UpdateChapterPayload = Pick<
   ChapterDB,
   'title' | 'subtitle' | 'position' | 'updatedAt' | 'slug'
