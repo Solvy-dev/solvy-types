@@ -17,7 +17,7 @@ export type ProblemSeed = Omit<ProblemDB, 'createdAt' | 'updatedAt' | 'slug'> & 
   slug?: string;
   sync: boolean;
 };
-export type ProblemSeedPayload = Omit<ProblemSeed, 'picture' | 'slug'> & {
+export type ProblemSeedPayload = Omit<ProblemSeed, 'picture' | 'slug' | 'sync'> & {
   picture?: AttachmentPayload;
 };
 
