@@ -24,10 +24,7 @@ export type UserDB = User & {
   createdAt: string;
   updatedAt: string;
 };
-export type SignUpPayload = Pick<
-  UserDB,
-  'email' | 'password' | 'provider' | 'accountType' | 'type'
-> & { oauthId?: string; image?: string; name?: string };
+export type SignUpPayload = Pick<UserDB, 'email' | 'password' | 'provider' | 'accountType'> & { oauthId?: string; image?: string; name?: string };
 
 export type UpdateUserProfile = {
   profile: UserProfile;
