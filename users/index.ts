@@ -12,7 +12,7 @@ export type User = {
   username: string;
   profile?: UserProfile;
   isVerified: boolean;
-  accountType: string;
+  accountType: string; // 'credentials' | 'oauth'
   password?: string;
   provider: string;
   type: 'student' | 'tutor' | 'parent'; // Analytics
