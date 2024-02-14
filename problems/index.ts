@@ -16,6 +16,7 @@ export interface ProblemDB extends Problem {
 export type ProblemSeed = Omit<ProblemDB, 'createdAt' | 'updatedAt' | 'slug'> & {
   slug?: string;
   sync: boolean;
+  picture: string | false;
 };
 export type ProblemSeedPayload = Omit<ProblemSeed, 'picture' | 'slug' | 'sync'> & {
   picture?: AttachmentPayload;
