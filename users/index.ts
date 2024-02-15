@@ -1,6 +1,6 @@
 export type UserProfile = {
+  firstName: string;
   picture?: string;
-  firstName?: string;
   lastName?: string;
   birthDate?: string | null;
   country?: string;
@@ -10,7 +10,7 @@ export type UserProfile = {
 export type User = {
   email: string;
   username: string;
-  profile?: UserProfile;
+  profile: UserProfile;
   isVerified: boolean;
   accountType: string; // 'credentials' | 'oauth'
   password?: string;
