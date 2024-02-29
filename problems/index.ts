@@ -35,5 +35,5 @@ export interface GetProblemBySlug {
   (slug: string): Promise<ProblemDB | null>;
 }
 
-export type ProblemRequest = { bookId: string; chapterId: string; problemId: string; userId: string; type: string }
+export type ProblemRequest = { bookId: string; chapterId: string; problemId: string; userId: string; requestType: string }
 export type ProblemRequestDB = ProblemRequest & { id: string, createdAt: string, updatedAt: string }
