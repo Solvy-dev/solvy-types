@@ -29,14 +29,11 @@ export type UpdateProblemPayload = Omit<
   ProblemDB,
   'id' | 'bookId' | 'chapterId' | 'createdAt' | 'slug'
 > & { slug?: string };
-export interface GetChapterProblems {
-  (bookId: string, chapterId: string): Promise<ProblemDB[]>;
-}
+
 
 export interface GetProblemBySlug {
   (slug: string): Promise<ProblemDB | null>;
 }
 
-export interface DeleteProblem {
-  (problem: ProblemDB): Promise<boolean>;
-}
+export type ProblemRequest = { bookId: string; chapterId: string; problemId: string; type: string }
+export type ProblemRequestDB = ProblemRequest & { id: string, createdAt: string, updatedAt: string }
