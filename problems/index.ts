@@ -41,4 +41,9 @@ export type SolutionRequest = {
   chapterId: string;
   problemId: string;
 }
-export type SolutionRequestDB = SolutionRequest & { id: string, status: string; createdAt: string, updatedAt: string }
+export type SolutionRequestDB = SolutionRequest & {
+  id: string;
+  status: 'pending' | 'in_progress' | 'completed';
+  createdAt: string;
+  updatedAt: string;
+}
