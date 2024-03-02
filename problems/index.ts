@@ -40,6 +40,9 @@ export type SolutionRequest = {
   bookId: string;
   chapterId: string;
   problemId: string;
+  bookTitle: string;
+  problemName: string;
+  problemSlug: string;
 }
 export type SolutionRequestDB = SolutionRequest & {
   id: string;
