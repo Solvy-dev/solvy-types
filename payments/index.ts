@@ -17,7 +17,7 @@ export type PaymentHistory = {
   paymentDate: string;
 }
 
-export type PaymentHistoryDB = {
+export type PaymentHistoryDB = PaymentHistory & {
   id: string;
   eInvoiceId: string; // Electronic Invoice required in Colombia
   createdAt: string;
