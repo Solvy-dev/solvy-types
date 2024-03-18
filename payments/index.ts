@@ -15,6 +15,7 @@ export type PaymentHistory = {
   status: string;
   paymentMethodUsed: string;
   paymentDate: string;
+  amount: number;
 }
 
 export type PaymentHistoryDB = PaymentHistory & {
