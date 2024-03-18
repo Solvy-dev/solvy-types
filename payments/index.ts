@@ -8,6 +8,21 @@ export type AddSubscriptionPayload = {
   plan: string;
 };
 
+export type PaymentHistory = {
+  userId: string;
+  planId: string;
+  membershipId: string;
+  status: string;
+  paymentMethodUsed: string;
+  paymentDate: string;
+}
+
+export type PaymentHistoryDB = {
+  id: string;
+  eInvoiceId: boolean; // Electronic Invoice required in Colombia
+  createdAt: string;
+}
+
 // OpenPay
 export interface OpenpayWebhook {
   type: 'charge.succeeded' | 'charge.refunded' | 'subscription.charge.failed'
