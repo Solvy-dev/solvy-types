@@ -19,7 +19,7 @@ export type PaymentHistory = {
 
 export type PaymentHistoryDB = {
   id: string;
-  eInvoiceId: boolean; // Electronic Invoice required in Colombia
+  eInvoiceId: string; // Electronic Invoice required in Colombia
   createdAt: string;
 }
 
