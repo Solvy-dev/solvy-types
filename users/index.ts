@@ -24,7 +24,6 @@ export type UserDB = User & {
   createdAt: string;
   updatedAt: string;
 };
-export type SignUpPayload = Pick<UserDB, 'email' | 'password' | 'provider' | 'accountType'> & { oauthId?: string; image?: string; name?: string };
 
 export type UpdateUserProfile = {
   profile: UserProfile;
@@ -36,7 +35,6 @@ export interface NextAuthUser {
   email: string;
 }
 
-export type FormikSignUpPayload = SignUpPayload & { confirmPassword: string };
 export type ChangePassword = {
   currentPassword: string;
   newPassword: string;
