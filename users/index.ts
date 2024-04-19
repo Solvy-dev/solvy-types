@@ -1,11 +1,14 @@
-export type UserProfile = {
+import { CalendarDate } from "@internationalized/date";
+
+export type UserProfileForm = {
   firstName: string;
   picture?: string;
   lastName?: string;
-  birthDate?: string | null;
+  birthDate?: CalendarDate;
   country?: string;
   city?: string;
 };
+export type UserProfile = Omit<UserProfileForm, 'birthDate'> & { birthDate?: string };
 
 export type User = {
   email: string;
