@@ -3,11 +3,15 @@ import { CalendarDate } from "@internationalized/date";
 export type User = {
   id: string;
   email: string;
-  profile: UserProfile,
+  profile: UserProfile;
+  validations: UserValidations;
   type: 'student' | 'tutor' | 'parent'; // Analytics
   role: 'student' | 'tutor' | 'admin'; // Show content conditionally in the platform
 }
 
+export type UserValidations = {
+  onboardingComplete: boolean
+}
 export type UserDB = User & {
   id: string;
   createdAt: string;
