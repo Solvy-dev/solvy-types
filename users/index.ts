@@ -34,3 +34,4 @@ export type UpdateUserProfile = {
   profile: UserProfile;
   updatedAt: string;
 };
+export type UserOnboarding = UpdateUserProfile & { validations: UserValidations; };
