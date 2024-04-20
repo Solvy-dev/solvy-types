@@ -15,7 +15,7 @@ export type UserDB = User & {
 };
 
 export type UserProfile = {
-  username: string;
+  username?: string;
   firstName?: string;
   picture?: string;
   lastName?: string;
@@ -25,3 +25,8 @@ export type UserProfile = {
 };
 
 export type UserProfileForm = Omit<UserProfile, 'birthDate'> & { birthDate?: CalendarDate };
+
+export type UpdateUserProfile = {
+  profile: UserProfile;
+  updatedAt: string;
+};

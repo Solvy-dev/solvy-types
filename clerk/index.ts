@@ -1,10 +1,10 @@
 export interface ClerkWebhook {
-  data: Data;
+  data: ClerkUserData;
   object: string;
   type: string;
 }
 
-export interface Data {
+export interface ClerkUserData {
   id: string;
   birthday: string;
   created_at: number;
@@ -28,7 +28,7 @@ export interface Data {
   two_factor_enabled: boolean;
   unsafe_metadata: Metadata;
   updated_at: number;
-  username: null;
+  username: string;
   web3_wallets: any[];
 }
 
