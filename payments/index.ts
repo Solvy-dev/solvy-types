@@ -1,4 +1,5 @@
 export type AddSubscriptionPayload = {
+  nid: string;
   userId: string;
   email: string;
   cardName: string;
