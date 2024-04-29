@@ -26,6 +26,7 @@ export interface Membership {
   startDate?: string;
   endDate?: string;
   paymentFrequency?: 'MONTHLY' | 'ANNUAL';
+  nid?: string; // personal id number
 }
 
 export type MembershipDB = Membership & {
