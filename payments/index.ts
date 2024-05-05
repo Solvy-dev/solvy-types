@@ -1,4 +1,4 @@
-import { OpenPayCard } from '../openpay/webhook'
+import { OpenPayCard } from "../openpay"
 
 export type AddSubscriptionPayload = {
   nid: string
@@ -11,16 +11,14 @@ export type AddSubscriptionPayload = {
   plan: string
 }
 
-export type PaymentHistory = {
+export type Payment = {
   userId: string
   planId: string
   membershipId: string
-
   status: string
   paymentGateway: 'OPENPAY'
   customerId: string
   subscriptionId: string
-
   amount: number
   currency: string
   method: string
@@ -28,8 +26,23 @@ export type PaymentHistory = {
   eInvoiceId?: string // Electronic Invoice required in Colombia
 }
 
-export type PaymentHistoryDB = PaymentHistory & {
+export type PaymentDB = Payment & {
   id: string
   createdAt: string
   updatedAt: string
+}
+
+export type PendingPayment = {
+    status: 'pending' | 'completed' | 'failed'
+    userId: string
+    customerId: string
+    planId: string
+    subscriptionId: string
+    gateway: 'openpay'
+}
+
+export type PendingPaymentDB = PendingPayment & {
+    id: string
+    createdAt: string
+    updatedAt: string
 }
